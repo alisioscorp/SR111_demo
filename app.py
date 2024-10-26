@@ -3,8 +3,8 @@ import pydeck as pdk
 import pandas as pd
 import numpy as np
 
-lat=41.703186
-lon=-3.790425
+lat=41.705881
+lon=-3.797353
 
 df = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [lat, lon], columns=["lat", "lon"])  #near Lima
