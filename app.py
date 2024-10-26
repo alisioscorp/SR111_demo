@@ -74,7 +74,7 @@ mapstyle = st.sidebar.selectbox(
 
 st.pydeck_chart(
     pdk.Deck(
-        map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
+        map_style="mapbox://rasterarrayexamples.gfs-winds",#'mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
         #layers=[layer1,layer2], # The following layer would be on top of the previous layers
         initial_view_state=pdk.ViewState(
 #            latitude=-12.04,
