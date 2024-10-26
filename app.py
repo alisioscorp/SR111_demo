@@ -85,18 +85,23 @@ st.pydeck_chart(
             pdk.Layer(
                 "ScatterplotLayer", #"HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
                 data=df3,
-                opacity=0.9,
+                #opacity=0.9,
                 get_position="[lon, lat]",
-                get_color="[200, 30, 0, 160]",
-                elevation_scale=10, 
-                #get_radius=20,
-                #elevation_range=[0, 3000],
-                radius=150,  #orig 150
-                #elevation_scale=4,
-                #elevation_range=[0, 1000],
-                pickable=True,
-                extruded=True,
-                coverage=1
+
+                auto_highlight=True,
+                get_radius=1000,
+                get_fill_color=[255, 'lng > 0 ? 200 * lng : -200 * lng', 'lng', 140],
+                pickable=True)
+                #get_color="[200, 30, 0, 160]",
+                #elevation_scale=10, 
+                ##get_radius=20,
+                ##elevation_range=[0, 3000],
+                #radius=150,  #orig 150
+                ##elevation_scale=4,
+                ##elevation_range=[0, 1000],
+                #pickable=True,
+                #extruded=True,
+                #coverage=1
             ),
         ],
     )
