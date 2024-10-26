@@ -11,7 +11,7 @@ df = pd.DataFrame(
 df2 = pd.DataFrame(
     np.random.randn(1000, 2) / [15, 35] + [lat, lon], columns=["lat", "lon"])
 df3 = pd.DataFrame(
-    np.random.randn(1000, 2) / [15, 14] + [lat, lon], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [15, 15] + [lat, lon], columns=["lat", "lon"])
 df4 = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 60] + [lat, lon], columns=["lat", "lon"])
 
@@ -84,8 +84,8 @@ st.pydeck_chart(
         layers=[
             pdk.Layer(
                 "HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
-                data=df,
-                opacity=0.8,
+                data=df3,
+                opacity=0.9,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
                 elevation_scale=10, 
