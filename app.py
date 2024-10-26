@@ -6,6 +6,15 @@ import numpy as np
 lat=41.705881
 lon=-3.797353
 
+COLOR_BREWER_BLUE_SCALE = [
+    [240, 249, 232],
+    [204, 235, 197],
+    [168, 221, 181],
+    [123, 204, 196],
+    [67, 162, 202],
+    [8, 104, 172],
+]
+
 df = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 50] + [lat, lon], columns=["lat", "lon"])  #near Lima
 df2 = pd.DataFrame(
@@ -91,8 +100,11 @@ st.pydeck_chart(
 
                 auto_highlight=True,
                 get_radius=50,
-                get_fill_color="[180, 0, 200, 140]",
-                get_color="[180, 0, 200, 140]",
+                color_range=COLOR_BREWER_BLUE_SCALE,
+                threshold=1,
+                get_weight="weight",
+                #get_fill_color="[180, 0, 200, 140]",
+                #get_color="[180, 0, 200, 140]",
                 pickable=True
                 #get_color="[200, 30, 0, 160]",
                 #elevation_scale=10, 
