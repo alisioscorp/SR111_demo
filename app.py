@@ -11,7 +11,7 @@ df = pd.DataFrame(
 df2 = pd.DataFrame(
     np.random.randn(1000, 2) / [15, 35] + [lat, lon], columns=["lat", "lon"])
 df3 = pd.DataFrame(
-    np.random.randn(1000, 2) / [60, 80] + [lat, lon], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [15, 14] + [lat, lon], columns=["lat", "lon"])
 df4 = pd.DataFrame(
     np.random.randn(1000, 2) / [50, 60] + [lat, lon], columns=["lat", "lon"])
 
