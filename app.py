@@ -83,7 +83,7 @@ st.pydeck_chart(
             longitude=lon,
             zoom=15,
             min_zoom=10,
-            min_zoom=17,
+            max_zoom=17,
             pitch=40, #50,
         ),
 #     opacity=0.9,
