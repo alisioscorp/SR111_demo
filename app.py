@@ -105,7 +105,7 @@ st.pydeck_chart(
             ),
         ],
     )
-)
+,use_container_width=True)
 # CATTLE_DATA = "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/nm_cattle.csv"
 # POULTRY_DATA = "https://raw.githubusercontent.com/ajduberstein/geo_datasets/master/nm_chickens.csv"
 
