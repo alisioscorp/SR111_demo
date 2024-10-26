@@ -72,7 +72,7 @@ st.pydeck_chart(
 #            longitude=-76.94,
             latitude=lat,
             longitude=lon,
-            zoom=10,
+            zoom=2,
             pitch=50, #50,
         ),
 #     opacity=0.9,
@@ -84,7 +84,7 @@ st.pydeck_chart(
         layers=[
             pdk.Layer(
                 "HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
-                data=df2,
+                data=df,
                 opacity=0.8,
                 get_position="[lon, lat]",
                 get_color="[200, 30, 0, 160]",
