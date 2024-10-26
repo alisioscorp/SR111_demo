@@ -83,7 +83,7 @@ st.pydeck_chart(
 #     pickable=True,
         layers=[
             pdk.Layer(
-                "HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
+                "ScatterplotLayer", #"HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
                 data=df3,
                 opacity=0.9,
                 get_position="[lon, lat]",
