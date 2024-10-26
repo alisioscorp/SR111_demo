@@ -90,7 +90,7 @@ st.pydeck_chart(
 
                 auto_highlight=True,
                 get_radius=50,
-                get_fill_color=[255, 'lon > 0 ? 200 * lon : -200 * lon', 'lon', 140],
+                get_fill_color=[180, 0, 200, 140],
                 pickable=True
                 #get_color="[200, 30, 0, 160]",
                 #elevation_scale=10, 
