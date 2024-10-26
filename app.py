@@ -101,8 +101,8 @@ st.pydeck_chart(
                 auto_highlight=True,
                 get_radius=50,
                 color_range=COLOR_BREWER_BLUE_SCALE,
-                threshold=1,
-                get_weight="weight",
+                #threshold=1,
+                #get_weight="weight",
                 #get_fill_color="[180, 0, 200, 140]",
                 #get_color="[180, 0, 200, 140]",
                 pickable=True
