@@ -3,14 +3,17 @@ import pydeck as pdk
 import pandas as pd
 import numpy as np
 
+lat=41.703186
+lon=-3.790425
+
 df = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 50] + [-12.04, -76.94], columns=["lat", "lon"])  #near Lima
+    np.random.randn(1000, 2) / [50, 50] + [lat, lon], columns=["lat", "lon"])  #near Lima
 df2 = pd.DataFrame(
-    np.random.randn(1000, 2) / [15, 35] + [-12.59, -75.99], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [15, 35] + [lat, lon], columns=["lat", "lon"])
 df3 = pd.DataFrame(
-    np.random.randn(1000, 2) / [60, 80] + [-12.4, -76.0], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [60, 80] + [lat, lon], columns=["lat", "lon"])
 df4 = pd.DataFrame(
-    np.random.randn(1000, 2) / [50, 60] + [-12.61, -75.91], columns=["lat", "lon"])
+    np.random.randn(1000, 2) / [50, 60] + [lat, lon], columns=["lat", "lon"])
 
 # list of data frames
 dataframes = [df, df2, df3, df4] 
@@ -67,10 +70,10 @@ st.pydeck_chart(
         initial_view_state=pdk.ViewState(
 #            latitude=-12.04,
 #            longitude=-76.94,
-            latitude=41.703186,
-            longitude=3.790425,
-            zoom=9,
-            pitch=70, #50,
+            latitude=lat,
+            longitude=lon,
+            zoom=10,
+            pitch=50, #50,
         ),
 #     opacity=0.9,
 #     get_position=["lng", "lat"],
