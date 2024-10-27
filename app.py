@@ -57,7 +57,7 @@ st.set_page_config(layout="wide", page_title="SR111 Viñedo", page_icon=":wine:"
 # LOAD DUMB DATA 
 @st.cache_resource
 def load_data():
-    path = "./uber-raw-data-sep14.csv.zip"
+    path = "./uber-raw-data-sep14.csv.gz"
     #if not os.path.isfile(path):
     #    path = f"https://github.com/alisioscorp/SR111_demo/tree/main/uber-raw-data-sep14.csv.gz"
 
