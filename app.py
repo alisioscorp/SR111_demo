@@ -231,19 +231,19 @@ row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
 midpoint = mpoint(data["lat"], data["lon"])
 
 with row2_1:
-    st.write("aaa")
-    map(filterdata(data, hour_selected), lat, lon, 10)
+    st.write("**Area 1**")
+    map(filterdata(data, hour_selected), lat, lon, zoom_level)
 
 with row2_2:
-    st.write("**Area 1**")
+    st.write("**Area 2**")
     map(filterdata(data, hour_selected), la_guardia[0], la_guardia[1], zoom_level)
 
 with row2_3:
-    st.write("**Area 2**")
+    st.write("**Area 3**")
     map(filterdata(data, hour_selected), jfk[0], jfk[1], zoom_level)
 
 with row2_4:
-    st.write("**Area 3**")
+    st.write("**Area 4**")
     map(filterdata(data, hour_selected), newark[0], newark[1], zoom_level)
 
 # CALCULATING DATA FOR THE HISTOGRAM
