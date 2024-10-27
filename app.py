@@ -168,8 +168,59 @@ with row1_2:
     ##
     Demo de una Recámara de Sibila (SR111) para un viñedo Ribera del Duero.
     Use el control deslizante en la izquierda para visualizar ubicaciones con riesgo de heladas en los últimos 14 días. 
+    Día 0: hoy; día 1: ayer: etc.
     """
     )
+
+st.pydeck_chart(
+    pdk.Deck(
+        map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
+        #layers=[layer1,layer2], # The following layer would be on top of the previous layers
+        initial_view_state=pdk.ViewState(
+#            latitude=-12.04,
+#            longitude=-76.94,
+            latitude=lat,
+            longitude=lon,
+            zoom=15,
+            min_zoom=10,
+            max_zoom=17,
+            pitch=40, #50,
+        ),
+#     opacity=0.9,
+#     get_position=["lng", "lat"],
+#     threshold=0.75,
+#     aggregation=pdk.types.String("MEAN"),
+#     get_weight="weight",
+#     pickable=True,
+        layers=[
+            pdk.Layer(
+                "HeatmapLayer",#"H3ClusterLayer", #"ScatterplotLayer", #"HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
+                data=filterdata(data, hour_selected),
+                #opacity=0.9,
+                get_position="[lon, lat]",
+
+                auto_highlight=True,
+                get_radius=50,
+                color_range=COLOR_BREWER_BLUE_SCALE,
+                threshold=.3,
+                #get_weight="weight",
+                #get_fill_color="[180, 0, 200, 140]",
+                #get_color="[180, 0, 200, 140]",
+                pickable=True
+                #get_color="[200, 30, 0, 160]",
+                #elevation_scale=10, 
+                ##get_radius=20,
+                ##elevation_range=[0, 3000],
+                #radius=150,  #orig 150
+                ##elevation_scale=4,
+                ##elevation_range=[0, 1000],
+                #pickable=True,
+                #extruded=True,
+                #coverage=1
+            ),
+        ],
+    )
+,use_container_width=True)
 
 # LAYING OUT THE MIDDLE SECTION OF THE APP WITH THE MAPS
 row2_1, row2_2, row2_3, row2_4 = st.columns((2, 1, 1, 1))
@@ -196,58 +247,6 @@ with row2_4:
 
 # CALCULATING DATA FOR THE HISTOGRAM
 chart_data = histdata(data, hour_selected)
-
-
-
-st.pydeck_chart(
-    pdk.Deck(
-        map_style='mapbox://styles/mapbox/satellite-v9', #f"{mapstyle}",  # 'light', 'dark', 'mapbox://styles/mapbox/satellite-streets-v12', 'road'
-        #layers=[layer1,layer2], # The following layer would be on top of the previous layers
-        initial_view_state=pdk.ViewState(
-#            latitude=-12.04,
-#            longitude=-76.94,
-            latitude=lat,
-            longitude=lon,
-            zoom=15,
-            min_zoom=10,
-            max_zoom=17,
-            pitch=40, #50,
-        ),
-#     opacity=0.9,
-#     get_position=["lng", "lat"],
-#     threshold=0.75,
-#     aggregation=pdk.types.String("MEAN"),
-#     get_weight="weight",
-#     pickable=True,
-        layers=[
-            pdk.Layer(
-                "HeatmapLayer",#"H3ClusterLayer", #"ScatterplotLayer", #"HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
-                data=df3,
-                #opacity=0.9,
-                get_position="[lon, lat]",
-
-                auto_highlight=True,
-                get_radius=50,
-                color_range=COLOR_BREWER_BLUE_SCALE,
-                threshold=.3,
-                #get_weight="weight",
-                #get_fill_color="[180, 0, 200, 140]",
-                #get_color="[180, 0, 200, 140]",
-                pickable=True
-                #get_color="[200, 30, 0, 160]",
-                #elevation_scale=10, 
-                ##get_radius=20,
-                ##elevation_range=[0, 3000],
-                #radius=150,  #orig 150
-                ##elevation_scale=4,
-                ##elevation_range=[0, 1000],
-                #pickable=True,
-                #extruded=True,
-                #coverage=1
-            ),
-        ],
-    )
-,use_container_width=True)
 
 # )
 # )
