@@ -200,7 +200,7 @@ st.pydeck_chart(
                 "HeatmapLayer",#"H3ClusterLayer", #"ScatterplotLayer", #"HeatmapLayer", #'HexagonLayer', #"ScatterplotLayer",
                 data=filterdata(data, hour_selected),
                 #opacity=0.9,
-                get_position="[lon, lat]",
+                get_position="[lon, lat]", #"[lon, lat]",
 
                 auto_highlight=True,
                 get_radius=50,
