@@ -232,7 +232,7 @@ midpoint = mpoint(data["lat"], data["lon"])
 
 with row2_1:
     st.write("**Area 1**")
-    map(filterdata(data, hour_selected), lat, lon, zoom_level)
+    map(filterdata(data, hour_selected), midpoint[0], midpoint[1], zoom_level)
 
 with row2_2:
     st.write("**Area 2**")
