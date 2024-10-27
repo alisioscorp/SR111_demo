@@ -63,7 +63,7 @@ def load_data():
 
     data = pd.read_csv(
         path,
-        nrows=100000,  # approx. 10% of data
+        nrows=10000,  # approx. 10% of data
         names=[
             "date/time",
             "lat",
